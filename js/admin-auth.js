@@ -25,11 +25,6 @@ function getCookie(name) {
   return null;
 }
 
-// Suppression de cookie
-function deleteCookie(name) {
-  document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
-}
-
 function adminRedirection() {
   const adminCookie = getCookie("admin");
   const pathname = window.location.pathname;
@@ -77,46 +72,4 @@ function handleConnectionAdmin(event) {
       window.location.pathname = "/faby_front/admin/acceuil.html";
     })
     .catch((error) => alert(error));
-}
-
-const connectionForm = document.querySelector("form#user-auth");
-connectionForm.addEventListener("submit", handleConnectionForm);
-
-function handleConnectionForm(event) {
-  event.preventDefault();
-  const data = new FormData(event.target);
-  const dataObject = Object.fromEntries(data.entries());
-  // console.log(dataObject)
-  const payload = {
-    email: dataObject.email_admin,
-    mdp: dataObject.password_admin,
-  };
-
-  fetch(`${backendBaseUrl}/auth/user`, {
-    method: "POST",
-    body: JSON.stringify(payload),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((res) => {
-      if (!res.ok) {
-        throw new Error("Vérifier votre email et votre mot de passe");
-      }
-      return res.json();
-    })
-    .then((data) => {
-      setCookie("user", JSON.stringify(data), 2);
-      window.location.pathname = "/faby_front/forum/acceuil.html";
-    })
-    .catch((error) => alert(error));
-}
-
-const logout = document.querySelector("li#logout");
-logout.addEventListener("click", handleLogout);
-
-function handleLogout(event) {
-  event.preventDefault();
-  deleteCookie("admin");
-  window.location.pathname = "/faby_front";
 }
