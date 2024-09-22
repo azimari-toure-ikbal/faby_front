@@ -50,7 +50,7 @@ function handleSubjectForm(event) {
   const formData = new FormData(event.target);
 
   // Append the file from the file input
-  const fileInput = document.querySelector('input[type="file"][name="file"]');
+  const fileInput = document.querySelector('input[type="file"][name="img"]');
   formData.append("file", fileInput.files[0]);
 
   fetch(`${backendBaseUrl}/subjects`, {
