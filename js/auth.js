@@ -35,7 +35,7 @@ function adminRedirection() {
   const pathname = window.location.pathname;
 
   if (adminCookie && pathname === "/auth/admin.html") {
-    window.location.pathname = "/admin/acceuil.html";
+    window.location.pathname = "/admin";
   }
 }
 
@@ -70,7 +70,7 @@ function handleConnectionAdmin(event) {
     })
     .then((data) => {
       setCookie("admin", JSON.stringify(data), 2);
-      window.location.pathname = "/admin/acceuil.html";
+      window.location.pathname = "/admin";
     })
     .catch((error) => alert(error));
 }
