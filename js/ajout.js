@@ -15,8 +15,8 @@ function handleUserForm(event) {
     email: dataObject.mail_etu,
     mdp: dataObject.mdp_etu,
     niveau: dataObject.user_level,
-    dob: new Date(dataObject.birth_etu),
-    creation: new Date(),
+    dob: dataObject.birth_etu,
+    // creation: new Date(),
   };
 
   fetch(`${backendBaseUrl}/students`, {
