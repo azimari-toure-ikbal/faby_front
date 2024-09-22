@@ -36,32 +36,49 @@ function handleUserForm(event) {
     })
     .then(() => {
       addUserForm.reset();
-      alert("L'étudiant à bien été ajouté");
+      alert("L'étudiant a bien été ajouté");
     })
     .catch((error) => alert(error));
 }
 
 const addSubjectForm = document.querySelector("form#add-subject");
 addSubjectForm.addEventListener("submit", handleSubjectForm);
+
 function handleSubjectForm(event) {
   event.preventDefault();
+
   const data = new FormData(event.target);
   const dataObject = Object.fromEntries(data.entries());
-  // console.log(dataObject)
+
   const payload = {
-    chemin: dataObject.img,
+    title: dataObject.subject_title,
     module: dataObject.module,
-    niveau: dataObject.subject - level,
+    niveau: dataObject.subject_level,
     enseignant: dataObject.prof,
     annee_pub: dataObject.annee_pub,
-    creation: new Date(),
+    file: dataObject.img,
   };
+
   console.log(payload);
-  fetch("http://127.0.0.1:8000/subjects/subjects", {
+
+  fetch(`${backendBaseUrl}/subjects`, {
     method: "POST",
     body: JSON.stringify(payload),
     headers: {
       "Content-Type": "application/json",
     },
-  });
+  })
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error(
+          "Vérifier les informations saisies ou contacter le support"
+        );
+      }
+      return res.json();
+    })
+    .then(() => {
+      addUserForm.reset();
+      alert("Le sujet a bien été ajouté");
+    })
+    .catch((error) => alert(error));
 }
