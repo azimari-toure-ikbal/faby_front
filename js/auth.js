@@ -101,7 +101,8 @@ function handleConnectionForm(event) {
   });
 }
 
-const logout = document.querySelector("li#deco");
+const logout = document.querySelector("li#logout");
+
 logout.addEventListener("click", handleLogout);
 
 function handleLogout(event) {
