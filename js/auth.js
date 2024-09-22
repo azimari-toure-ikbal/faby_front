@@ -100,3 +100,12 @@ function handleConnectionForm(event) {
     },
   });
 }
+
+const logout = document.querySelector("li#deco");
+logout.addEventListener("click", handleLogout);
+
+function handleLogout(event) {
+  event.preventDefault();
+  deleteCookie("admin");
+  window.location.pathname = "/faby_front";
+}
