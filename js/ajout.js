@@ -45,26 +45,26 @@ function handleUserForm(event) {
     .catch((error) => alert(error));
 
   // Creer l'utilisateur pour le forum
-  //   fetch(`${backendBaseUrl}/users`, {
-  //     method: "POST",
-  //     body: JSON.stringify(userPayload),
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   })
-  //     .then((res) => {
-  //       if (!res.ok) {
-  //         throw new Error(
-  //           "Vérifier les informations saisies ou contacter le support"
-  //         );
-  //       }
-  //       return res.json();
-  //     })
-  //     .then(() => {
-  //       addUserForm.reset();
-  //       alert("L'étudiant a bien été ajouté");
-  //     })
-  //     .catch((error) => alert(error));
+  fetch(`${backendBaseUrl}/users`, {
+    method: "POST",
+    body: JSON.stringify(userPayload),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error(
+          "Vérifier les informations saisies ou contacter le support"
+        );
+      }
+      return res.json();
+    })
+    .then(() => {
+      addUserForm.reset();
+      alert("L'étudiant a bien été ajouté");
+    })
+    .catch((error) => alert(error));
 }
 
 const addSubjectForm = document.querySelector("form#add-subject");
