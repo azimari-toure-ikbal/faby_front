@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tableau de Bord Administrateur</title>
-    <link rel="stylesheet" href="../css/admin.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/admin.css" />
+  </head>
+  <body>
     <div class="content">
-        <div class="sidebar">
-            <h2><span class="dit">DIT</span><span class="class-darkset">Administrateur</span></h2>
-            <ul>
-                <li class="active"><a href="acceuil.html">Acceuil</a></li>
-                <li ><a class="navlink" href="ajout.html">Page d'ajouts</a></li>
-                <li ><a class="navlink" href="suivie.html">Page de suivis</a></li>
-                <li id="deco" class="navlink">Déconexion</li>
-            </ul>
-        </div>
-    
-        <main class="main-content">
-            <div class="top">
-               <div>
-                <h2>Bienvenue!</h2>
-                <h3> Nous Sommes ravis de svous revoir</h3>
-               </div>
-             <div class="img-relative">
+      <div class="sidebar">
+        <h2>
+          <span class="dit">DIT</span
+          ><span class="class-darkset">Administrateur</span>
+        </h2>
+        <ul>
+          <li class="active"><a href="acceuil.html">Acceuil</a></li>
+          <li><a class="navlink" href="ajout.html">Page d'ajouts</a></li>
+          <li><a class="navlink" href="suivie.html">Page de suivis</a></li>
+          <li id="deco" class="navlink">Déconexion</li>
+        </ul>
+      </div>
+
+      <main class="main-content">
+        <div class="top">
+          <div>
+            <h2>Bienvenue!</h2>
+            <h3>Nous Sommes ravis de vous revoir</h3>
+          </div>
+          <!-- <div class="img-relative">
               <img
                 class="avatar"
                 src="../assets/img/IMG_1982.JPG"
@@ -48,58 +51,60 @@
                   <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z" />
                 </svg>
               </span>
-             </div>
-            </div>
-            <h2>Modifier le profil</h2>
-            <form class="profil-form">
-              <div class="form-group">
-                <label for="firstName">Prénom</label>
-                <input
-                  type="text"
-                  name="firstName"
-                  id="firstName"
-                  required
-                  value="Fatou Bintou"
-                />
-              </div>
-              <div class="form-group">
-                <label for="lastName">Nom</label>
-                <input
-                  type="text"
-                  name="lastName"
-                  id="lastName"
-                  required
-                  value="NDIAYE"
-                />
-              </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  required
-                  value="pasmonadresse@gmail.com"
-                />
-              </div>
-              <div class="form-group">
-                <label for="phoneNumber">Téléphone</label>
-                <input
-                  type="tel"
-                  name="phoneNumber"
-                  id="phoneNumber"
-                  required
-                  value="+221 77 777 77 77"
-                />
-              </div>
-              <button type="submit" disabled class="btn-primary">Confirmer</button>
-      
-            </form>
-            <footer>
-                <p>&copy; copyright Fatou Bintou NDIAYE - 2024</p>
-              </footer>
-        </main>
-        
+             </div> -->
+        </div>
+        <h2>Information du profil</h2>
+        <form class="profil-form">
+          <div class="form-group">
+            <label for="firstName">Prénom</label>
+            <input
+              disabled
+              type="text"
+              name="firstName"
+              id="firstName"
+              required
+              value="Fatou Bintou"
+            />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Nom</label>
+            <input
+              disabled
+              type="text"
+              name="lastName"
+              id="lastName"
+              required
+              value="NDIAYE"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              disabled
+              type="email"
+              name="email"
+              id="email"
+              required
+              value="pasmonadresse@gmail.com"
+            />
+          </div>
+          <div class="form-group">
+            <label for="phoneNumber">Téléphone</label>
+            <input
+              disabled
+              type="tel"
+              name="phoneNumber"
+              id="phoneNumber"
+              required
+              value="+221 77 777 77 77"
+            />
+          </div>
+          <!-- <button type="submit" disabled class="btn-primary">Confirmer</button> -->
+        </form>
+        <footer>
+          <p>&copy; copyright Fatou Bintou NDIAYE - 2024</p>
+        </footer>
+      </main>
     </div>
-</body>
+  </body>
 </html>
