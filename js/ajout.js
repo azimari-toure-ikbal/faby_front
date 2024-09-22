@@ -61,10 +61,10 @@ function handleSubjectForm(event) {
 
       // Construct the data object to send
       const data = {
-        title: formData.get("title"),
+        title: formData.get("subject_title"),
         module: formData.get("module"),
-        niveau: formData.get("niveau"),
-        enseignant: formData.get("enseignant"),
+        niveau: formData.get("subject_level"),
+        enseignant: formData.get("prof"),
         annee_pub: formData.get("annee_pub"),
         file_data: base64String,
       };
