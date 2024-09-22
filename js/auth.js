@@ -96,7 +96,7 @@ function handleConnectionForm(event) {
     method: "POST",
     body: JSON.stringify(payload),
     headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
+      "Content-Type": "application/json",
     },
   })
     .then((res) => {
@@ -113,7 +113,6 @@ function handleConnectionForm(event) {
 }
 
 const logout = document.querySelector("li#logout");
-
 logout.addEventListener("click", handleLogout);
 
 function handleLogout(event) {
