@@ -49,28 +49,57 @@ function handleSubjectForm(event) {
 
   const formData = new FormData(event.target);
 
-  // Append the file from the file input
   const fileInput = document.querySelector('input[type="file"][name="img"]');
-  formData.append("file", fileInput.files[0]);
+  const file = fileInput.files[0];
 
-  fetch(`${backendBaseUrl}/subjects`, {
-    method: "POST",
-    body: formData,
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((res) => {
-      if (!res.ok) {
-        throw new Error(
-          "Vérifier les informations saisies ou contacter le support"
-        );
-      }
-      return res.json();
-    })
-    .then(() => {
-      addSubjectForm.reset();
-      alert("Le sujet a bien été ajouté");
-    })
-    .catch((error) => alert(error));
+  if (file) {
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+      // Extract the Base64 string
+      const base64String = e.target.result.split(",")[1];
+
+      // Construct the data object to send
+      const data = {
+        title: formData.get("title"),
+        module: formData.get("module"),
+        niveau: formData.get("niveau"),
+        enseignant: formData.get("enseignant"),
+        annee_pub: formData.get("annee_pub"),
+        file_data: base64String,
+      };
+
+      // Send the data to the backend
+      fetch(`${backendBaseUrl}/subjects`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error(
+              "Vérifier les informations saisies ou contacter le support"
+            );
+          }
+          return res.json();
+        })
+        .then(() => {
+          addSubjectForm.reset();
+          alert("Le sujet a bien été ajouté");
+        })
+        .catch((error) => alert(error));
+    };
+
+    reader.onerror = function (error) {
+      console.error("Error: ", error);
+      alert("Erreur lors de la lecture du fichier");
+    };
+
+    // Read the file as Data URL
+    reader.readAsDataURL(file);
+  } else {
+    alert("Veuillez sélectionner un fichier");
+  }
 }
