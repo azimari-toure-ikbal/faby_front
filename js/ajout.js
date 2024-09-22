@@ -18,6 +18,15 @@ function handleUserForm(event) {
     dob: dataObject.birth_etu,
   };
 
+  const userPayload = {
+    email: dataObject.mail_etu,
+    prenom: dataObject.user_prenom,
+    nom: dataObject.user_nom,
+    role: "ETUDIANT",
+    mdp: dataObject.mdp_etu,
+  };
+
+  //   Creer le compte de l'etudiant
   fetch(`${backendBaseUrl}/students`, {
     method: "POST",
     body: JSON.stringify(payload),
@@ -33,35 +42,27 @@ function handleUserForm(event) {
       }
       return res.json();
     })
-    .then(() => {
-      const userPayload = {
-        email: dataObject.mail_etu,
-        prenom: dataObject.user_prenom,
-        nom: dataObject.user_nom,
-        role: "ETUDIANT",
-        mdp: dataObject.mdp_etu,
-      };
+    .catch((error) => alert(error));
 
-      fetch(`${backendBaseUrl}/users`, {
-        method: "POST",
-        body: JSON.stringify(userPayload),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-        .then((res) => {
-          if (!res.ok) {
-            throw new Error(
-              "Vérifier les informations saisies ou contacter le support"
-            );
-          }
-          return res.json();
-        })
-        .then(() => {
-          addUserForm.reset();
-          alert("L'étudiant a bien été ajouté");
-        })
-        .catch((error) => alert(error));
+  // Creer l'utilisateur pour le forum
+  fetch(`${backendBaseUrl}/users`, {
+    method: "POST",
+    body: JSON.stringify(userPayload),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error(
+          "Vérifier les informations saisies ou contacter le support"
+        );
+      }
+      return res.json();
+    })
+    .then(() => {
+      addUserForm.reset();
+      alert("L'étudiant a bien été ajouté");
     })
     .catch((error) => alert(error));
 }
