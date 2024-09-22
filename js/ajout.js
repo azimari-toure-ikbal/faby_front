@@ -23,7 +23,7 @@ function handleUserForm(event) {
     email: dataObject.mail_etu,
     prenom: dataObject.user_prenom,
     nom: dataObject.user_nom,
-    role: "ETUDIANT",
+    role: "etudiant",
     mdp: dataObject.mdp_etu,
   };
 
@@ -43,27 +43,28 @@ function handleUserForm(event) {
       }
       return res.json();
     })
-    .catch((error) => alert(error));
-
-  // Creer l'utilisateur pour le forum
-  fetch(`${backendBaseUrl}/users`, {
-    method: "POST",
-    body: JSON.stringify(userPayload),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((res) => {
-      if (!res.ok) {
-        throw new Error(
-          "Vérifier les informations saisies ou contacter le support"
-        );
-      }
-      return res.json();
-    })
     .then(() => {
-      addUserForm.reset();
-      alert("L'étudiant a bien été ajouté");
+      // Creer l'utilisateur pour le forum
+      fetch(`${backendBaseUrl}/users`, {
+        method: "POST",
+        body: JSON.stringify(userPayload),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error(
+              "Vérifier les informations saisies ou contacter le support"
+            );
+          }
+          return res.json();
+        })
+        .then(() => {
+          addUserForm.reset();
+          alert("L'étudiant a bien été ajouté");
+        })
+        .catch((error) => alert(error));
     })
     .catch((error) => alert(error));
 }
