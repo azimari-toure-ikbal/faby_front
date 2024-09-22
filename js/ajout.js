@@ -47,23 +47,15 @@ addSubjectForm.addEventListener("submit", handleSubjectForm);
 function handleSubjectForm(event) {
   event.preventDefault();
 
-  const data = new FormData(event.target);
-  const dataObject = Object.fromEntries(data.entries());
+  const formData = new FormData(event.target);
 
-  const payload = {
-    title: dataObject.subject_title,
-    module: dataObject.module,
-    niveau: dataObject.subject_level,
-    enseignant: dataObject.prof,
-    annee_pub: dataObject.annee_pub,
-    file: dataObject.img,
-  };
-
-  console.log(payload);
+  // Append the file from the file input
+  const fileInput = document.querySelector('input[type="file"][name="file"]');
+  formData.append("file", fileInput.files[0]);
 
   fetch(`${backendBaseUrl}/subjects`, {
     method: "POST",
-    body: JSON.stringify(payload),
+    body: formData,
     headers: {
       "Content-Type": "application/json",
     },
@@ -77,7 +69,7 @@ function handleSubjectForm(event) {
       return res.json();
     })
     .then(() => {
-      addUserForm.reset();
+      addSubjectForm.reset();
       alert("Le sujet a bien été ajouté");
     })
     .catch((error) => alert(error));
