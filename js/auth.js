@@ -91,14 +91,25 @@ function handleConnectionForm(event) {
     email: dataObject.email_admin,
     mdp: dataObject.password_admin,
   };
-  console.log(payload);
-  fetch(`${backendBaseUrl}/users/users`, {
+
+  fetch(`${backendBaseUrl}/auth/user`, {
     method: "POST",
     body: JSON.stringify(payload),
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
     },
-  });
+  })
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error("Vérifier votre email et votre mot de passe");
+      }
+      return res.json();
+    })
+    .then((data) => {
+      setCookie("user", JSON.stringify(data), 2);
+      window.location.pathname = "/faby_front/forum/acceuil.html";
+    })
+    .catch((error) => alert(error));
 }
 
 const logout = document.querySelector("li#logout");
