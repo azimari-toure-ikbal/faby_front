@@ -16,7 +16,6 @@ function handleUserForm(event) {
     mdp: dataObject.mdp_etu,
     niveau: dataObject.user_level,
     dob: dataObject.birth_etu,
-    // creation: new Date(),
   };
 
   fetch(`${backendBaseUrl}/students`, {
@@ -35,8 +34,34 @@ function handleUserForm(event) {
       return res.json();
     })
     .then(() => {
-      addUserForm.reset();
-      alert("L'étudiant a bien été ajouté");
+      const userPayload = {
+        email: dataObject.mail_etu,
+        prenom: dataObject.user_prenom,
+        nom: dataObject.user_nom,
+        role: "ETUDIANT",
+        mdp: dataObject.mdp_etu,
+      };
+
+      fetch(`${backendBaseUrl}/users`, {
+        method: "POST",
+        body: JSON.stringify(userPayload),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error(
+              "Vérifier les informations saisies ou contacter le support"
+            );
+          }
+          return res.json();
+        })
+        .then(() => {
+          addUserForm.reset();
+          alert("L'étudiant a bien été ajouté");
+        })
+        .catch((error) => alert(error));
     })
     .catch((error) => alert(error));
 }
