@@ -5,6 +5,7 @@ addUserForm.addEventListener("submit", handleUserForm);
 
 function handleUserForm(event) {
   event.preventDefault();
+
   const data = new FormData(event.target);
   const dataObject = Object.fromEntries(data.entries());
 
