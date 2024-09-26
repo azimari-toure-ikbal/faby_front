@@ -16,8 +16,6 @@
   --secondary: #87d7bf;
   --accent: #38686d;
 
-
-
   scroll-behavior: smooth;
 }
 
@@ -72,10 +70,6 @@ h2.subtitle {
   color: var(--text);
 }
 
-
-
-
-
 svg {
   background-color: transparent;
 }
@@ -88,274 +82,271 @@ select {
 }
 
 /* ############################################################ */
- /* ############################################################ */
-  
-  /* BUTTONS */
-  .btn-primary {
-    background-color: var(--primary);
-    color: var(--background);
-    padding: 0.8em 0.7em;
-    width: fit-content;
-    border-radius: 0.5em;
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-  
-  .btn-outline {
-    background-color: var(--background);
-    border: 1px solid var(--primary);
-    color: var(--text);
-    padding: 0.8em 0.7em;
-    width: fit-content;
-    border-radius: 0.5em;
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-  
-  .btn-ghost {
-    background-color: white;
-    color: var(--text);
-  }
-  
-  .btn-primary:hover {
-    background-color: var(--accent);
-  }
-  
-  .btn-outline:hover {
-    background-color: var(--primary);
-    color: white;
-  }
-  a.linkspe{
-    color: var(--primary);
-  }
-  a.linkspe:hover{
-    text-decoration:underline ;
-  }
+/* ############################################################ */
 
-  /* ############################################################ */
-  
-  /* NAVIGATION */
-  a.brand h2 {
-    color: var(--text);
-  }
-  
-  span.text-darkest {
-    color: var(--text);
-  }
-  span.dit{
-    color: var(--primary);
-  }
+/* BUTTONS */
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--background);
+  padding: 0.8em 0.7em;
+  width: fit-content;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: all 0.3s;
+}
 
-  nav.navbar {
-    background-color: var(--background);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid var(--text);
-    padding: 1em 4em;
-    position: sticky;
-    top: 0;
-    z-index: 99;
-  }
-  
-  ul.navigation {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-  }
-  
-  li.nav-item {
-    font-weight: normal;
-  }
-  
-  li.dropdown-item {
-    display: none;
-  }
-  
-  ul.dropdown-content {
-    padding: 1em;
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    border-radius: 0.5em;
-    z-index: 1;
-  }
-  
-  ul.dropdown-content > li {
-    color: var(--text);
-  }
-  
-  ul.dropdown-content > li > a {
-    background-color: white;
-    display: block;
-    padding: 0.5em;
-  }
-  
-  li.dropdown:hover ul.dropdown-content {
-    display: block;
-  }
-  
-  li.active {
-    color: var(--primary);
-  }
-  
-  img.avatar {
-    border-radius: 50%;
-    width: 2em 1.5em;
-  }
-   /* ############################################################ */
-  /* HEADER */
-  
+.btn-outline {
+  background-color: var(--background);
+  border: 1px solid var(--primary);
+  color: var(--text);
+  padding: 0.8em 0.7em;
+  width: fit-content;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-ghost {
+  background-color: white;
+  color: var(--text);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary);
+  color: white;
+}
+a.linkspe {
+  color: var(--primary);
+}
+a.linkspe:hover {
+  text-decoration: underline;
+}
+
+/* ############################################################ */
+
+/* NAVIGATION */
+a.brand h2 {
+  color: var(--text);
+}
+
+span.text-darkest {
+  color: var(--text);
+}
+span.dit {
+  color: var(--primary);
+}
+
+nav.navbar {
+  background-color: var(--background);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--text);
+  padding: 1em 4em;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+
+ul.navigation {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+li.nav-item {
+  font-weight: normal;
+}
+
+li.dropdown-item {
+  display: none;
+}
+
+ul.dropdown-content {
+  padding: 1em;
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5em;
+  z-index: 1;
+}
+
+ul.dropdown-content > li {
+  color: var(--text);
+}
+
+ul.dropdown-content > li > a {
+  background-color: white;
+  display: block;
+  padding: 0.5em;
+}
+
+li.dropdown:hover ul.dropdown-content {
+  display: block;
+}
+
+li.active {
+  color: var(--primary);
+}
+
+img.avatar {
+  border-radius: 50%;
+  width: 2em 1.5em;
+}
+/* ############################################################ */
+/* HEADER */
+
 div.banner {
-    width: 60%;
-    padding: 1.5em 0;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--primary);
-   
-  }
-  
-  div.banner h3 {
-   text-decoration: var(--secondary);
-    font-weight: normal;
-  }
-  
-  div.banner a.more {
-    background-color: inherit;
-    color: var(--background);
-    font-weight: normal;
-  }
-  
-  a.more:hover {
-    color: var(--secondary);
-    text-decoration: underline;
-  }
-  
-  main.content {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding: 1em 4em;
-    gap: 4em;
-  }
-  
-  main.content h1,
-  h2,
-  h3 {
-    color: var(--text);
-  }
-  
-  header{
-    display: flex;
-    background-color: var(--background);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px var(--primary);
-   
-  }
-  
-  .header-left{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 4em;
-  }
-  
-  header>img{
-    padding-left: 3em;
-  }
-  /* ############################################################ */
-  
-  
-  /* ############################################################ */
- 
-.forum-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+  width: 60%;
+  padding: 1.5em 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary);
 }
-.discussion-list{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 20px; 
+
+div.banner h3 {
+  text-decoration: var(--secondary);
+  font-weight: normal;
+}
+
+div.banner a.more {
+  background-color: inherit;
+  color: var(--background);
+  font-weight: normal;
+}
+
+a.more:hover {
+  color: var(--secondary);
+  text-decoration: underline;
+}
+
+main.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 1em 4em;
+  gap: 4em;
+}
+
+main.content h1,
+h2,
+h3 {
+  color: var(--text);
+}
+
+header {
+  display: flex;
+  background-color: var(--background);
   padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
- 
-
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--primary);
 }
 
-.discussion-list > li{
+.header-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4em;
+}
+
+header > img {
+  padding-left: 3em;
+}
+/* ############################################################ */
+
+/* ############################################################ */
+
+.forum-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  width: 100%;
+  margin: 0 auto;
+}
+.discussion-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.discussion-list > li {
   background-color: var(--background);
   box-shadow: 0 0 10px var(--primary);
   border-radius: 10px;
   padding: 20px;
 }
-.discussion-list, .new-topic {
-    width: 48%;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+.new-topic {
+  width: 48%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.discussion-list h2, .new-topic h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-} 
+.discussion-list h2,
+.new-topic h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 ul li {
-    margin-bottom: 20px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
 }
 
-
 ul li p {
-    font-size: 14px;
-    color: #777;
+  font-size: 14px;
+  color: #777;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 label {
-    margin-bottom: 10px;
-    font-weight: bold;
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 input[type="text"],
 textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 
-.action{
+.action {
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 1em;
 }
 
-.main_disc{
+.main_disc {
   width: 100%;
   height: 100%;
   display: flex;
@@ -363,4 +354,69 @@ textarea {
   align-items: center;
   justify-content: center;
   gap: 1em;
+}
+
+.discussion-container {
+  padding: 20px;
+}
+
+.discussion-content {
+  margin-bottom: 30px;
+}
+
+.discussion-author {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.discussion-message {
+  background-color: var(--background);
+  border-left: 5px solid var(--accent);
+  padding: 15px;
+  margin-bottom: 30px;
+  font-size: 1.1em;
+  line-height: 1.5em;
+}
+
+/* Formulaire d'envoi de message */
+.message-form {
+  margin-bottom: 30px;
+}
+
+.message-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+/* Section des réponses */
+.reponses-section {
+  margin-bottom: 30px;
+}
+
+.reponse {
+  background-color: #f9f9f9;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-left: 5px solid var(--accent);
+}
+
+.reponse-author {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.reponse-message {
+  font-size: 1.1em;
+  line-height: 1.5em;
 }

@@ -33,9 +33,15 @@ function adminRedirection() {
     window.location.pathname = "/faby_front/admin/acceuil.html";
   }
 
-  if (!adminCookie && pathname.includes("/admin")) {
+  if (!adminCookie && pathname.includes("/auth/admin.html")) {
+    return;
+  }
+
+  if (!adminCookie && pathname.includes("/faby_front/admin/acceuil.html")) {
     window.location.pathname = "/faby_front/auth/admin.html";
   }
+
+  return;
 }
 
 const connectionAdmin = document.querySelector("form#admin-auth");
