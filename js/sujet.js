@@ -23,7 +23,7 @@ function getSubjects() {
             <td>${subject.enseignant}</td>
             <td>${subject.annee_pub}</td>
             <td>
-              <a href={${backendBaseUrl}/>subject.chemin} class="btn-outline">Télécharger</a>
+              <a href="${backendBaseUrl}/${subject.chemin}" class="btn-outline">Télécharger</a>
             </td>
           `;
         subjectsTable.appendChild(row);
