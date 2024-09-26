@@ -119,3 +119,23 @@ function handleStudentSearch(event) {
     }
   });
 }
+
+const subjectSeach = document.querySelector("input#search-subjects");
+subjectSeach.addEventListener("input", handleSubjectSearch);
+
+function handleSubjectSearch(event) {
+  const searchTerm = event.target.value.toLowerCase();
+
+  //   On filtre les sujets par le titre
+  const subjectsTable = document.querySelector("table#subjects-table>tbody");
+  const filteredSubjects = subjectsTable.querySelectorAll("tr");
+
+  filteredSubjects.forEach((subject) => {
+    const subjectTitle = subject.querySelector("td:nth-child(1)").textContent;
+    if (subjectTitle.toLowerCase().includes(searchTerm)) {
+      subject.style.display = "";
+    } else {
+      subject.style.display = "none";
+    }
+  });
+}
