@@ -18,8 +18,8 @@ function getStudents() {
           <td>${student.nom}</td>
           <td>${student.prenom}</td>
           <td>${student.num_etu}</td>
-          <td>${student.date_naiss}</td>
-          <td>${student.mail}</td>
+          <td>${student.dob}</td>
+          <td>${student.email}</td>
           <td>${student.niveau}</td>
           <td>
             <button id="supp" class="btn-outline">Supprimer</button>
