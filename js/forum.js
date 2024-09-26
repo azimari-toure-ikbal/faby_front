@@ -18,8 +18,7 @@ function getDiscussions() {
 
       discussions.innerHTML = sortedResponse.map((discussion) => {
         return `<li>
-                    <a href="/faby_front/forum/detail_discu.html?id=${discussion.id}">${discussion.titre}</a>
-                    <p>Posté par ${discussion.user.prenom} ${discussion.user.nom}</p>
+                    hello
                 </li>`;
       });
     })
