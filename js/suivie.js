@@ -55,7 +55,7 @@ function getSubjects() {
           <td>${subject.enseignant}</td>
           <td>${subject.annee_pub}</td>
           <td>
-            <button id="supp" class="btn-outline">Supprimer</button>
+            <button class="btn-outline" onclick="deleteStudent('${subject.id}', this)">Supprimer</button>
           </td>
         `;
         subjectsTable.appendChild(row);
@@ -77,6 +77,24 @@ function deleteStudent(id, btn) {
         const row = btn.closest("tr");
         row.remove();
         alert("L'étudiant a bien été supprimé");
+      })
+      .catch((error) => alert(error));
+  }
+}
+
+function deleteSubject(id, btn) {
+  if (confirm("Êtes-vous sûr de vouloir supprimer ce sujet ?")) {
+    fetch(`${backendBaseUrl}/subjects/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Erreur lors de la suppression du sujet");
+        }
+
+        const row = btn.closest("tr");
+        row.remove();
+        alert("Le sujet a bien été supprimé");
       })
       .catch((error) => alert(error));
   }
