@@ -17,8 +17,8 @@ function handleConnectionForum(event) {
   const dataObject = Object.fromEntries(data.entries());
   // console.log(dataObject)
   const payload = {
-    email: dataObject.email_admin,
-    password: dataObject.password_admin,
+    email: dataObject.email,
+    password: dataObject.password,
   };
 
   fetch(`${backendBaseUrl}/auth/user`, {
