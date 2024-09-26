@@ -16,8 +16,6 @@
   --secondary: #87d7bf;
   --accent: #38686d;
 
-
-
   scroll-behavior: smooth;
 }
 
@@ -52,28 +50,30 @@ footer p {
   text-align: center;
 }
 
+footer {
+  margin-top: auto;
+}
+
 a {
   text-decoration: none;
   color: inherit;
 }
 
-.active{
+.active {
   background-color: var(--accent);
   color: var(--background);
   text-decoration: underline;
 }
-.active:hover{
+.active:hover {
   color: var(--secondary);
   transition: all 0.3s;
 }
-
 
 .navlink:hover {
   color: var(--background);
   text-decoration: underline;
   transition: all 0.3s;
 }
-
 
 h2.subtitle {
   text-align: center;
@@ -82,8 +82,6 @@ h2.subtitle {
   margin: 1em 0;
   color: var(--text);
 }
-
-
 
 svg {
   background-color: transparent;
@@ -97,135 +95,132 @@ select {
 }
 
 .btn-primary {
-    background-color: var(--primary);
-    color: var(--background);
-    padding: 0.8em 0.7em;
-    width: fit-content;
-    border-radius: 0.5em;
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-  
-  .btn-outline {
-    background-color: var(--background);
-    border: 1px solid var(--primary);
-    color: var(--text);
-    padding: 0.8em 0.7em;
-    width: fit-content;
-    border-radius: 0.5em;
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-  
-  .btn-ghost {
-    background-color: white;
-    color: var(--text);
-  }
-  
-  .btn-primary:hover {
-    background-color: var(--accent);
-  }
-  
-  .btn-outline:hover {
-    background-color: var(--primary);
-    color: white;
-  }
- 
+  background-color: var(--primary);
+  color: var(--background);
+  padding: 0.8em 0.7em;
+  width: fit-content;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: all 0.3s;
+}
 
+.btn-outline {
+  background-color: var(--background);
+  border: 1px solid var(--primary);
+  color: var(--text);
+  padding: 0.8em 0.7em;
+  width: fit-content;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-ghost {
+  background-color: white;
+  color: var(--text);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+#barre_recher {
+  width: 500px;
+}
 /* ############################################################ */
-.content{
-    width: 100%;
-    display: flex;
+.content {
+  width: 100%;
+  display: flex;
 }
 .sidebar {
-    width: 250px;
-    background-color: var(--primary);
-    color: #fff;
-    height: 100vh;
-    padding: 20px;
-    position: fixed;
+  width: 250px;
+  background-color: var(--primary);
+  color: #fff;
+  height: 100vh;
+  padding: 20px;
+  position: fixed;
 }
 span.text-darkest {
-    color: var(--text);
-  }
-  span.dit{
-    color: var(--background);
-  }
-
+  color: var(--text);
+}
+span.dit {
+  color: var(--background);
+}
 
 .sidebar h2 {
-    margin-bottom: 30px;
-    font-size: 24px;
-    text-align: center;
-    
+  margin-bottom: 30px;
+  font-size: 24px;
+  text-align: center;
 }
 
 .sidebar ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 .sidebar ul li {
-    margin-bottom: 20px;
-    padding: 1.5em;
-    width: 100%;
-    
-    
+  margin-bottom: 20px;
+  padding: 1.5em;
+  width: 100%;
 }
 
 .sidebar ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
 }
 
-
 .main-content {
-    margin-left: 270px;
-    padding: 20px;
-    width: 100%;
+  margin-left: 270px;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
 }
 
 .section {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 h2 {
-    font-size: 28px;
-    color: var(--text);
-    margin-bottom: 20px;
+  font-size: 28px;
+  color: var(--text);
+  margin-bottom: 20px;
 }
 
 form {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
 }
 
 label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 input,
 select,
 textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 
 /* Profile */
 .img-relative {
   position: relative;
- 
 }
 
-.img-relative>img{
+.img-relative > img {
   border: var(--primary);
   border-radius: 50%;
 }
@@ -241,13 +236,14 @@ textarea {
   background-color: var(--primary);
   cursor: pointer;
 }
-.top{
+.top {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1em;
 }
-.top h2, h3{
+.top h2,
+h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -261,15 +257,14 @@ svg.lucide {
   left: 25%;
 }
 
- form.profil-form {
+form.profil-form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1em;
-} 
+}
 
 form.profil-form button {
   grid-column: span 2;
-} 
+}
 
 /* ############################################################ */
-
