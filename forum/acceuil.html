@@ -4,43 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forum d'Échange Étudiants</title>
+    <link rel="stylesheet" href="../css/forum.css">
 </head>
 <body>
-    <nav class="navbar">
-        <a href="../index.html" class="brand">
-            <h2><span class="dit">DIT</span><span class="class-darkset">GUIDE</span></h2>
+  <nav class="navbar">
+    <a href="index.html" class="brand">
+        <h2><span class="dit">DIT</span><span class="class-darkset">GUIDE</span></h2>
+    </a>
+    <ul class="navigation">
+        
+        <li class="active nav-item">
+                <a class="navlink" href="index.html">Accueil</a>
+        </li>
+        <li class="dropdown nav-item">
+                <a class="navlink" href="sujet.html"
+                >Sujets</a>  
+        </li>
+        <li class="dropdown nav-item">
+                <a class="navlink" href="index.html"
+                >Forum</a
+                >
+                <ul class="dropdown-content">
+                <li><a href="forum/acceuil.html">Accueil</a></li>
+                <li><a href="auth/forum.html">Connexion</a></li>
+                
+                </ul>
+        </li>
+        <li class="dropdown nav-item btn btn-primary">
+            <a href="auth/admin.html" class="navlink">
+                Adminstration
+            </a>
+        </li>
+        
+        <a href="profil/.html">
+          <img
+            class="avatar"
+            src="../assets/img/IMG_1982.JPG"
+            width="50"
+            height="50"
+            alt="avatar"
+          />
         </a>
-        <ul class="navigation">
-            
-            <li class="active nav-item">
-                    <a class="navlink" href="../index.html">Accueil</a>
-            </li>
-            <li class="dropdown nav-item">
-                    <a class="navlink" href="../sujet/"
-                    >Sujets</a
-                    >
-                    <ul class="dropdown-content">
-                    <li><a href="sujet/licence1.html">Licence 1</a></li>
-                    <li><a href="sujet/licence2.html">Licence 2</a></li>
-                    <li><a href="sujet/licence3.html">Licence 3</a></li>
-                    <li><a href="sujet/master1.html">Master 1</a></li>
-                    <li><a href="sujet/master2.html">Master 2</a></li>
-                    </ul>
-            </li>
-          
-            <li class="dropdown nav-item btn btn-primary">
-                <a href="auth/admin.html" class="navlink">
-                    Adminstration
-                </a>
-            </li>
+        
 
-            </li>
-            
-        </ul>
+        </li>
+        
+    </ul>
 
-       
-  
-    </nav>
+   
+
+</nav>
 
     <main class="content">
       
