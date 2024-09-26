@@ -60,3 +60,6 @@ function getSubjects() {
     })
     .catch((error) => alert(error));
 }
+
+window.onload = getStudents();
+window.onload = getSubjects();
