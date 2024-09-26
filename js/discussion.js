@@ -1,3 +1,16 @@
+function getQueryParam(param) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
+}
+
+const discussionId = getQueryParam("id");
+
+if (discussionId) {
+  getDiscussion(discussionId);
+} else {
+  console.error("No 'id' parameter found in the URL.");
+}
+
 function getDiscussion(id) {
   fetch(`https://fasti-test-production.up.railway.app/discussions/${id}`)
     .then((res) => {
