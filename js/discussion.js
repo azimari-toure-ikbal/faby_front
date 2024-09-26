@@ -84,7 +84,7 @@ function handleMessageForm(event) {
 
   const payload = {
     contenu: dataObject.message,
-    id_discussion: dataObject.discussion_id,
+    id_discussion: discussionId,
     id_utilisateur: user.id,
   };
 
