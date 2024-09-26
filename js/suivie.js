@@ -1,7 +1,7 @@
+const backendBaseUrl = "https://fasti-test-production.up.railway.app";
+
 window.onload = getStudents();
 window.onload = getSubjects();
-
-const backendBaseUrl = "https://fasti-test-production.up.railway.app";
 
 function getStudents() {
   fetch(`${backendBaseUrl}/students`)
