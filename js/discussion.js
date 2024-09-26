@@ -23,7 +23,7 @@ function getDiscussion(id) {
       const content = document.querySelector(".discussion-content");
       content.innerHTML = `
         <h2>${data.titre}</h2>
-        <p class="discussion-author">Posté par ${data.user.prenom} ${data.user.nom} - ${data.creation}</p>
+        <p class="discussion-author">Posté par ${data.auteur.prenom} ${data.auteur.nom} - ${data.creation}</p>
         <div class="discussion-message">
           <p>${data.contenu}</p>
         </div>
