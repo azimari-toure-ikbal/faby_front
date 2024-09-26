@@ -61,5 +61,38 @@ function getSubjects() {
     .catch((error) => alert(error));
 }
 
+const deleteButton = document.querySelectorAll("button#supp");
+deleteButton.forEach((button) => {
+  button.addEventListener("click", handleDeleteButton);
+});
+
+function handleDeleteButton(event) {
+  event.preventDefault();
+
+  const id = event.target.parentElement.parentElement.id;
+
+  console.log("id", id);
+
+  //   fetch(`${backendBaseUrl}/students/${id}`, {
+  //     method: "DELETE",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //   })
+  //     .then((res) => {
+  //       if (!res.ok) {
+  //         throw new Error("Erreur lors de la suppression de l'étudiant");
+  //       }
+  //       return res.json();
+  //     })
+  //     .then((data) => {
+  //       const studentsTable = document.querySelector(
+  //         "table#students-table>tbody"
+  //       );
+  //       studentsTable.removeChild(document.querySelector(`#${id}`));
+  //     })
+  //     .catch((error) => alert(error));
+}
+
 window.onload = getStudents();
 window.onload = getSubjects();
