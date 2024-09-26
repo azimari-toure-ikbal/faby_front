@@ -12,9 +12,11 @@ function getDiscussions() {
       return res.json();
     })
     .then((data) => {
+      const sortedResponse = data.sort((a, b) => b.creation - a.creation);
+
       const discussions = document.querySelector(".discussion-list");
 
-      discussions.innerHTML = data.map((discussion) => {
+      discussions.innerHTML = sortedResponse.map((discussion) => {
         return `<li>
                     <a href="/faby_front/forum/detail_discu.html?id=${discussion.id}">${discussion.titre}</a>
                     <p>Posté par ${discussion.user.prenom} ${discussion.user.nom}</p>

@@ -36,19 +36,23 @@ function getDiscussion(id) {
       return res.json();
     })
     .then((data) => {
+      const sortedResponses = data.sort((a, b) => b.creation - a.creation);
+
       const content = document.querySelector(".discussion-content");
       content.innerHTML = `
-        <h2>${data.titre}</h2>
-        <p class="discussion-author">Posté par ${data.auteur.prenom} ${
-        data.auteur.nom
-      } - ${new Date(data.creation).toLocaleString()}</p>
+        <h2>${sortedResponses.titre}</h2>
+        <p class="discussion-author">Posté par ${
+          sortedResponses.auteur.prenom
+        } ${sortedResponses.auteur.nom} - ${new Date(
+        sortedResponses.creation
+      ).toLocaleString()}</p>
         <div class="discussion-message">
-          <p>${data.contenu}</p>
+          <p>${sortedResponses.contenu}</p>
         </div>
       `;
 
       const messages = document.querySelector(".reponses-section");
-      data.messages.forEach((message) => {
+      sortedResponses.messages.forEach((message) => {
         const response = document.createElement("div");
         response.classList.add("reponse");
         response.innerHTML = `
@@ -115,6 +119,8 @@ function handleMessageForm(event) {
           </div>
         `;
         messages.appendChild(response);
+
+        messageForm.reset();
       }
     })
     .catch((error) => alert(error));
