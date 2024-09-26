@@ -24,7 +24,7 @@ const discussionId = getQueryParam("id");
 if (discussionId) {
   getDiscussion(discussionId);
 } else {
-  console.error("No 'id' parameter found in the URL.");
+  alert("Cet article n'existe pas!");
 }
 
 function getDiscussion(id) {

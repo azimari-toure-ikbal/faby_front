@@ -17,18 +17,10 @@ function getDiscussions() {
       const discussions = document.querySelector(".discussion-list");
 
       discussions.innerHTML = sortedResponse.map((discussion) => {
-        const row = (
-          <li>
-            <a href="/faby_front/forum/detail_discu.html?id=${discussion.id}">
-              ${discussion.titre}
-            </a>
-            <p>
-              Posté par ${discussion.user.prenom} ${discussion.user.nom}
-            </p>
-          </li>
-        );
-
-        return row;
+        return `<li>
+                    <a href="/faby_front/forum/detail_discu.html?id=${discussion.id}">${discussion.titre}</a>
+                    <p>Posté par ${discussion.user.prenom} ${discussion.user.nom}</p>
+                </li>`;
       });
     })
     .catch((error) => alert(error));

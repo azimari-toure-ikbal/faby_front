@@ -1,5 +1,24 @@
 window.onload = adminRedirection();
 
+function adminRedirection() {
+  const adminCookie = getCookie("admin");
+  const pathname = window.location.pathname;
+
+  if (adminCookie && pathname.includes("/auth/admin.html")) {
+    window.location.pathname = "/faby_front/admin/acceuil.html";
+  }
+
+  if (!adminCookie && pathname.includes("/auth/admin.html")) {
+    return;
+  }
+
+  if (!adminCookie && pathname.includes("/faby_front/admin/acceuil.html")) {
+    window.location.pathname = "/faby_front/auth/admin.html";
+  }
+
+  return;
+}
+
 const backendBaseUrl = "https://fasti-test-production.up.railway.app";
 
 // Creation de cookie
@@ -25,30 +44,12 @@ function getCookie(name) {
   return null;
 }
 
-function adminRedirection() {
-  const adminCookie = getCookie("admin");
-  const pathname = window.location.pathname;
-
-  if (adminCookie && pathname.includes("/auth/admin.html")) {
-    window.location.pathname = "/faby_front/admin/acceuil.html";
-  }
-
-  if (!adminCookie && pathname.includes("/auth/admin.html")) {
-    return;
-  }
-
-  if (!adminCookie && pathname.includes("/faby_front/admin/acceuil.html")) {
-    window.location.pathname = "/faby_front/auth/admin.html";
-  }
-
-  return;
-}
-
 const connectionAdmin = document.querySelector("form#admin-auth");
 connectionAdmin.addEventListener("submit", handleConnectionAdmin);
 
 function handleConnectionAdmin(event) {
   event.preventDefault();
+
   const data = new FormData(event.target);
   const dataObject = Object.fromEntries(data.entries());
   // console.log(dataObject)
@@ -67,7 +68,6 @@ function handleConnectionAdmin(event) {
     },
   })
     .then((res) => {
-      console.log("res", res);
       if (!res.ok) {
         throw new Error("Vérifier votre email et votre mot de passe");
       }
