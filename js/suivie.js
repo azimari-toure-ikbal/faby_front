@@ -55,7 +55,7 @@ function getSubjects() {
           <td>${subject.enseignant}</td>
           <td>${subject.annee_pub}</td>
           <td>
-            <button class="btn-outline" onclick="deleteStudent('${subject.id}', this)">Supprimer</button>
+            <button class="btn-outline" onclick="deleteSubject('${subject.id}', this)">Supprimer</button>
           </td>
         `;
         subjectsTable.appendChild(row);
@@ -106,7 +106,7 @@ studentSeach.addEventListener("input", handleStudentSearch);
 function handleStudentSearch(event) {
   const searchTerm = event.target.value.toLowerCase();
 
-  //   On filtre les étudiants par le prénom
+  //   On filtre les étudiants par le nom
   const studentsTable = document.querySelector("table#students-table>tbody");
   const filteredStudents = studentsTable.querySelectorAll("tr");
 
