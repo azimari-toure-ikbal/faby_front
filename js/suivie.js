@@ -1,3 +1,6 @@
+window.onload = getStudents();
+window.onload = getSubjects();
+
 const backendBaseUrl = "https://fasti-test-production.up.railway.app";
 
 function getStudents() {
@@ -22,7 +25,7 @@ function getStudents() {
           <td>${student.email}</td>
           <td>${student.niveau}</td>
           <td>
-            <button id="supp" class="btn-outline">Supprimer</button>
+            <button class="btn-outline" onclick="deleteStudent('${student.num_etu}', this)">Supprimer</button>
           </td>
         `;
         studentsTable.appendChild(row);
@@ -61,38 +64,40 @@ function getSubjects() {
     .catch((error) => alert(error));
 }
 
-const deleteButton = document.querySelectorAll("button#supp");
-deleteButton.forEach((button) => {
-  button.addEventListener("click", handleDeleteButton);
-});
+function deleteStudent(id, btn) {
+  if (confirm("Êtes-vous sûr de vouloir supprimer cet étudiant ?")) {
+    fetch(`${backendBaseUrl}/students/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Erreur lors de la suppression de l'étudiant");
+        }
 
-function handleDeleteButton(event) {
-  event.preventDefault();
-
-  const id = event.target.parentElement.parentElement.id;
-
-  console.log("id", id);
-
-  //   fetch(`${backendBaseUrl}/students/${id}`, {
-  //     method: "DELETE",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   })
-  //     .then((res) => {
-  //       if (!res.ok) {
-  //         throw new Error("Erreur lors de la suppression de l'étudiant");
-  //       }
-  //       return res.json();
-  //     })
-  //     .then((data) => {
-  //       const studentsTable = document.querySelector(
-  //         "table#students-table>tbody"
-  //       );
-  //       studentsTable.removeChild(document.querySelector(`#${id}`));
-  //     })
-  //     .catch((error) => alert(error));
+        const row = btn.closest("tr");
+        row.remove();
+        alert("L'étudiant a bien été supprimé");
+      })
+      .catch((error) => alert(error));
+  }
 }
 
-window.onload = getStudents();
-window.onload = getSubjects();
+const studentSeach = document.querySelector("input#search-students");
+studentSeach.addEventListener("input", handleStudentSearch);
+
+function handleStudentSearch(event) {
+  const searchTerm = event.target.value.toLowerCase();
+
+  //   On filtre les étudiants par le prénom
+  const studentsTable = document.querySelector("table#students-table>tbody");
+  const filteredStudents = studentsTable.querySelectorAll("tr");
+
+  filteredStudents.forEach((student) => {
+    const studentName = student.querySelector("td:nth-child(1)").textContent;
+    if (studentName.toLowerCase().includes(searchTerm)) {
+      student.style.display = "";
+    } else {
+      student.style.display = "none";
+    }
+  });
+}
