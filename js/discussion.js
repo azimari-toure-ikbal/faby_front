@@ -1,3 +1,5 @@
+const backendBaseUrl = "https://fasti-test-production.up.railway.app";
+
 function getCookie(name) {
   let cookieArr = document.cookie.split(";");
 

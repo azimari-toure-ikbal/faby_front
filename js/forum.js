@@ -14,8 +14,6 @@ function getDiscussions() {
     .then((data) => {
       const discussions = document.querySelector(".discussion-list");
 
-      //   {'id': 1, 'titre': 'Article 1', 'sous_titre': 'maths', 'contenu': 'okasdpkakdas;kda;skd;akdakd;akd;alkd;kas;lkdasdasdasdasdasda', 'creation': datetime.datetime(2024, 9, 26, 12, 7, 49), 'user': {'id': 2, 'email': 'nfatoubintou8@gmail.com', 'prenom': 'Fatou Bintou', 'nom': 'NDIAYE', 'role': 'etudiant'}}
-
       discussions.innerHTML = data.map((discussion) => {
         return `<li>
                     <a href="/faby_front/forum/detail_discu.html?id=${discussion.id}">${discussion.titre}</a>
