@@ -51,7 +51,7 @@ function handleNewTopicForm(event) {
       return res.json();
     })
     .then((data) => {
-      window.location.href = `./forum/detail_discu.html?id=${data.id}`;
+      window.location.pathname = `/faby_front/forum/detail_discu.html?id=${data.id}`;
     })
     .catch((error) => alert(error));
 }
