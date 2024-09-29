@@ -129,7 +129,7 @@ select {
   color: white;
 }
 
-.barre_recher {
+#barre_recher {
   width: 500px;
 }
 /* ############################################################ */

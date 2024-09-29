@@ -16,8 +16,6 @@
   --secondary: #87d7bf;
   --accent: #38686d;
 
-
-
   scroll-behavior: smooth;
 }
 
@@ -72,10 +70,6 @@ h2.subtitle {
   color: var(--text);
 }
 
-
-
-
-
 svg {
   background-color: transparent;
 }
@@ -89,147 +83,146 @@ select {
 
 /* ############################################################ */
 
-
 /* ANIMATIONS */
 @keyframes slide {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-100%);
-    }
+  from {
+    transform: translateX(0);
   }
-  
-  /* ############################################################ */
-  
-  /* CONTAINERS */
-  div.container {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
+  to {
+    transform: translateX(-100%);
   }
-  
-  /* ############################################################ */
-  
-  /* BUTTONS */
-  .btn-primary {
-    background-color: var(--primary);
-    color: var(--background);
-    padding: 0.8em 0.7em;
-    width: fit-content;
-    border-radius: 0.5em;
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-  
-  .btn-outline {
-    background-color: var(--background);
-    border: 1px solid var(--primary);
-    color: var(--text);
-    padding: 0.8em 0.7em;
-    width: fit-content;
-    border-radius: 0.5em;
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-  
-  .btn-ghost {
-    background-color: white;
-    color: var(--text);
-  }
-  
-  .btn-primary:hover {
-    background-color: var(--accent);
-  }
-  
-  .btn-outline:hover {
-    background-color: var(--primary);
-    color: white;
-  }
-  a.linkspe{
-    color: var(--primary);
-  }
-  a.linkspe:hover{
-    text-decoration:underline ;
-  }
+}
 
-  /* ############################################################ */
-  
-  /* NAVIGATION */
-  a.brand h2 {
-    color: var(--text);
-  }
-  
-  span.text-darkest {
-    color: var(--text);
-  }
-  span.dit{
-    color: var(--primary);
-  }
+/* ############################################################ */
 
-  nav.navbar {
-    background-color: var(--background);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid var(--text);
-    padding: 1em 4em;
-    position: sticky;
-    top: 0;
-    z-index: 99;
-  }
-  
-  ul.navigation {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-  }
-  
-  li.nav-item {
-    font-weight: normal;
-  }
-  
-  li.dropdown-item {
-    display: none;
-  }
-  
-  ul.dropdown-content {
-    padding: 1em;
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    border-radius: 0.5em;
-    z-index: 1;
-  }
-  
-  ul.dropdown-content > li {
-    color: var(--text);
-  }
-  
-  ul.dropdown-content > li > a {
-    background-color: white;
-    display: block;
-    padding: 0.5em;
-  }
-  
-  li.dropdown:hover ul.dropdown-content {
-    display: block;
-  }
-  
-  li.active {
-    color: var(--primary);
-  }
-  
-  img.avatar {
-    border-radius: 50%;
-    width: 2em 1.5em;
-  }
-  
-  /* ############################################################ */
-  /* HEADER */
-  
+/* CONTAINERS */
+div.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* ############################################################ */
+
+/* BUTTONS */
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--background);
+  padding: 0.8em 0.7em;
+  width: fit-content;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-outline {
+  background-color: var(--background);
+  border: 1px solid var(--primary);
+  color: var(--text);
+  padding: 0.8em 0.7em;
+  width: fit-content;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-ghost {
+  background-color: white;
+  color: var(--text);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary);
+  color: white;
+}
+a.linkspe {
+  color: var(--primary);
+}
+a.linkspe:hover {
+  text-decoration: underline;
+}
+
+/* ############################################################ */
+
+/* NAVIGATION */
+a.brand h2 {
+  color: var(--text);
+}
+
+span.text-darkest {
+  color: var(--text);
+}
+span.dit {
+  color: var(--primary);
+}
+
+nav.navbar {
+  background-color: var(--background);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--text);
+  padding: 1em 4em;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+
+ul.navigation {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+li.nav-item {
+  font-weight: normal;
+}
+
+li.dropdown-item {
+  display: none;
+}
+
+ul.dropdown-content {
+  padding: 1em;
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5em;
+  z-index: 1;
+}
+
+ul.dropdown-content > li {
+  color: var(--text);
+}
+
+ul.dropdown-content > li > a {
+  background-color: white;
+  display: block;
+  padding: 0.5em;
+}
+
+li.dropdown:hover ul.dropdown-content {
+  display: block;
+}
+
+li.active {
+  color: var(--primary);
+}
+
+img.avatar {
+  border-radius: 50%;
+  width: 2em 1.5em;
+}
+
+/* ############################################################ */
+/* HEADER */
+
 div.banner {
   width: 100%;
   padding: 1.5em 0;
@@ -238,11 +231,10 @@ div.banner {
   align-items: center;
   justify-content: center;
   background-color: var(--primary);
- 
 }
 
 div.banner h3 {
- text-decoration: var(--secondary);
+  text-decoration: var(--secondary);
   font-weight: normal;
 }
 
@@ -261,6 +253,7 @@ main.content {
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
   padding: 1em 4em;
   gap: 4em;
 }
@@ -271,16 +264,15 @@ h3 {
   color: var(--text);
 }
 
-header{
+header {
   display: flex;
   background-color: var(--background);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px var(--primary);
- 
 }
 
-.header-left{
+.header-left {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -288,7 +280,7 @@ header{
   gap: 4em;
 }
 
-header>img{
+header > img {
   padding-left: 3em;
 }
 /* ############################################################ */
@@ -343,7 +335,6 @@ div.val {
 }
 
 /* ############################################################ */
-
 
 /* FAQ */
 div.questions {
