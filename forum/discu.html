@@ -1,30 +1,54 @@
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Tableau de Bord Administrateur</title>
-        <link rel="stylesheet" href="../css/forum.css">
-    </head>
-    <body>
-        
-       <div class="main_disc">
-         <!-- Formulaire de création de sujet -->
-         <div class="new-topic">
-            <h2>Créer une Nouvelle Discussion</h2>
-            <form action="#" method="POST">
-                <label for="topic-title">Titre de la Discussion :</label>
-                <input type="text" id="topic-title" name="topic-title" placeholder="Entrez un titre" required>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tableau de Bord Administrateur</title>
+    <link rel="stylesheet" href="../css/forum.css" />
+  </head>
+  <body>
+    <div class="main_disc">
+      <!-- Formulaire de création de sujet -->
+      <div class="new-topic">
+        <h2>Créer une Nouvelle Discussion</h2>
+        <form id="new-topic-form">
+          <label for="topic_title">Titre de la Discussion :</label>
+          <input
+            type="text"
+            id="topic_title"
+            name="topic_title"
+            placeholder="Entrez un titre"
+            required
+          />
 
-                <label for="topic-content">Contenu :</label>
-                <textarea id="topic-content" name="topic-content" rows="5" placeholder="Entrez votre question ou sujet de discussion" required></textarea>
-                <div class="action">
-                    <button type="submit" class="btn-primary posterDisc">Poster la Discussion</button>
-                    <a href="../forum/acceuil.html" type=""><button class="btn-primary" type="button">Retour à l'Accueil</button></a>
+          <label for="topic_subtitle">Titre de la Discussion :</label>
+          <input
+            type="text"
+            id="topic_subtitle"
+            name="topic_subtitle"
+            placeholder="Entrez un sous-titre"
+          />
 
-                </div>
-           
-            </form>
-        </div>
-       </div>
-    </body>
+          <label for="topic_content">Contenu :</label>
+          <textarea
+            id="topic_content"
+            name="topic_content"
+            rows="5"
+            placeholder="Entrez votre question ou sujet de discussion"
+            required
+          ></textarea>
+          <div class="action">
+            <button type="submit" class="btn-primary posterDisc">
+              Poster la Discussion
+            </button>
+            <a href="../forum/acceuil.html" type=""
+              ><button class="btn-primary" type="button">
+                Retour à l'Accueil
+              </button></a
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="../js/new-discussion.js"></script>
 </html>
